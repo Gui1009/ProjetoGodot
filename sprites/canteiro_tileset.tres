@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://sprites/canteiro.png" id="1_2in3b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0utq"]
+texture = ExtResource("1_2in3b")
+texture_region_size = Vector2i(208, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-96, -52, 96, -52, 96, 52, -96, 52)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u0utq")

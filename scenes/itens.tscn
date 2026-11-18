@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://entities/enxada_coletavel.tscn" id="1_id4gu"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_krqig"]
+resource_name = "Ferramentas"
+scenes/1/scene = ExtResource("1_id4gu")
+
+[sub_resource type="TileSet" id="TileSet_f45bf"]
+sources/0 = SubResource("TileSetScenesCollectionSource_krqig")
+
+[node name="Itens" type="TileMapLayer" unique_id=790497333]
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 64, 0, 40, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = SubResource("TileSet_f45bf")

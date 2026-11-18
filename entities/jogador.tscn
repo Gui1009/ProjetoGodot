@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=17 format=3]
 
 [ext_resource type="Script" path="res://scripts/jogador.gd" id="1"]
 [ext_resource type="Texture2D" path="res://sprites/atlas.png" id="2"]
+[ext_resource type="PackedScene" path="res://entities/enxada_visual.tscn" id="3"]
 [sub_resource type="AtlasTexture" id="F0"]
 atlas = ExtResource("2")
 region = Rect2(0.0, 0, 313.5, 338)
@@ -42,7 +43,10 @@ region = Rect2(940.5, 650, 313.5, 325)
 animations = [{ "frames": [{"duration": 1.0, "texture": SubResource("F0")},{"duration": 1.0, "texture": SubResource("F1")},{"duration": 1.0, "texture": SubResource("F2")},{"duration": 1.0, "texture": SubResource("F3")}], "loop": true, "name": &"baixo", "speed": 7.0},{ "frames": [{"duration": 1.0, "texture": SubResource("F4")},{"duration": 1.0, "texture": SubResource("F5")},{"duration": 1.0, "texture": SubResource("F6")},{"duration": 1.0, "texture": SubResource("F7")}], "loop": true, "name": &"cima", "speed": 7.0},{ "frames": [{"duration": 1.0, "texture": SubResource("F8")},{"duration": 1.0, "texture": SubResource("F9")},{"duration": 1.0, "texture": SubResource("F10")},{"duration": 1.0, "texture": SubResource("F11")}], "loop": true, "name": &"lado", "speed": 7.0}]
 [sub_resource type="RectangleShape2D" id="Shape"]
 size = Vector2(22, 16)
-[node name="Jogador" type="CharacterBody2D"]
+[node name="Jogador" type="CharacterBody2D" groups=["jogador"]]
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
 script = ExtResource("1")
 texture_filter = 1
 [node name="Sombra" type="Polygon2D" parent="."]
@@ -55,3 +59,10 @@ sprite_frames = SubResource("Frames")
 animation = &"baixo"
 [node name="Colisao" type="CollisionShape2D" parent="."]
 shape = SubResource("Shape")
+
+[node name="Enxada" parent="." instance=ExtResource("3")]
+visible = false
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

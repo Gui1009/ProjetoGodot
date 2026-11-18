@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[node name="Enxada" type="Node2D"]
+texture_filter = 1
+
+[node name="Cabo" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-5,-2, 37,-2, 39,0, 36,3, -5,3, -7,1)
+color = Color(0.29,0.17,0.10,1)
+
+[node name="Madeira" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-5,-1, 36,-1, 36,1, -5,1)
+color = Color(0.94,0.70,0.36,1)
+
+[node name="Lamina" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(32,-5, 40,-5, 43,-2, 42,2, 39,5, 39,13, 35,15, 29,15, 31,10, 33,4)
+color = Color(0.18,0.23,0.24,1)
+
+[node name="Metal" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(34,-4, 39,-4, 41,-2, 38,3, 37,12, 32,13, 35,3)
+color = Color(0.61,0.74,0.72,1)
+
+[node name="Fio" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(33,11, 37,10, 37,12, 32,13)
+color = Color(0.93,0.98,0.89,1)
+
+[node name="Anel" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(28,-3, 32,-3, 32,3, 28,3)
+color = Color(0.36,0.45,0.44,1)
+
+[node name="Gravacao" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0,-1, 2,-1, 2,2, 0,2)
+color = Color(0.53,0.27,0.12,1)
