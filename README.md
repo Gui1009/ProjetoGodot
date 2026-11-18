@@ -1,18 +1,7 @@
 # Horta em Perigo
 
-Protótipo inicial, limitado à base da Aula 08.
+Jogo de sobrevivência feito na Godot 4.7. O jardineiro precisa aguentar três minutos em uma horta atacada por lesmas gigantes.
 
-## Carta
-- Tema: horta atacada por lesmas gigantes.
-- Tipo: sobrevivência.
-- Objetivo final: aguentar 3 minutos.
-- Modo escolhido para esta base: horda, com visão de cima.
+![A horta com a enxada no caminho perto do jardineiro](docs/partida.png)
 
-## O que está pronto
-Cenário fechado em uma tela, obstáculos com colisão e personagem com movimento em quatro direções. Personagem com caminhada em quatro direções e movimento suave quando parado. Cenas e scripts separados.
-
-## Próximas etapas
-Lesmas, vida, dano, cronômetro de 3 minutos e telas de vitória/derrota ainda não foram implementados. Não há combate nem jogo completo nesta base.
-
-
-O repositório remoto, as entregas e as tags de aula ainda não foram criados.
+A horta de 1920 × 1280 tem 16 canteiros cercados por caminhos. O cenário é editável em camadas TileMapLayer e a câmera acompanha o jardineiro. As lesmas contornam os canteiros e chegam em grupos cada vez maiores. O jardineiro começa desarmado e equipa a enxada ao passar por ela. O tempo e os cinco pontos de vida são contados durante a partida, sem indicadores na tela. Dois golpes derrotam uma lesma.
