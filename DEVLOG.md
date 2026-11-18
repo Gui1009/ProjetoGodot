@@ -21,3 +21,7 @@ A validação desta versão conferiu as cinco camadas, a ausência do HUD, o blo
 ## 18/11/2026 — HUD básico de vida e tempo
 
 Adicionado um HUD com duas linhas no canto superior esquerdo: vida atual e máxima, começando em 5/5, e tempo restante, começando em 3:00. Os valores acompanham o dano e a contagem da partida e voltam ao início ao reiniciar. A interface usa apenas texto, sem painel ou animações.
+
+## 18/11/2026 — Versão para navegador
+
+Configurada a exportação Web sem threads e publicada a versão do jogo pelo GitHub Pages, na branch gh-pages. O jogo mantém o mapa, os sprites, o combate e o HUD da versão para computador. A exportação foi verificada no navegador com movimento, coleta da enxada, ataque e reinício.
