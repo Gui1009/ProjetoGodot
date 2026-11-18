@@ -17,3 +17,7 @@ Depois, o cenário foi organizado nas camadas Terreno, Canteiros, Cultivos, Cerc
 Conferimos que o GitHub ainda continha apenas o commit inicial de 28/10. As alterações acumuladas foram organizadas em um commit da versão jogável e outro da documentação, ambos com a data real de 18/11. Os registros acima descrevem o trabalho local e não comprovam entregas nessas datas.
 
 A validação desta versão conferiu as cinco camadas, a ausência do HUD, o bloqueio do ataque antes da coleta, a coleta da enxada, o ataque equipado, a derrota e o reinício. Também verificou a condição de vitória ao terminar a contagem. A duração configurada continua em 180 segundos.
+
+## 18/11/2026 — HUD básico de vida e tempo
+
+Adicionado um HUD com duas linhas no canto superior esquerdo: vida atual e máxima, começando em 5/5, e tempo restante, começando em 3:00. Os valores acompanham o dano e a contagem da partida e voltam ao início ao reiniciar. A interface usa apenas texto, sem painel ou animações.

@@ -11,11 +11,16 @@ var jogador: CharacterBody2D
 var ultima_entrada := -1
 
 @onready var fim: Control = %Fim
+@onready var vida_texto: Label = %Vida
+@onready var tempo_texto: Label = %Tempo
 
 func _ready() -> void:
 	jogador = get_parent().get_node("Jogador")
 	lesma = load(CAMINHO_LESMA)
 	jogador.connect("morreu", encerrar.bind(false))
+	jogador.connect("vida_alterada", atualizar_vida)
+	atualizar_vida(jogador.vida, jogador.vida_maxima)
+	atualizar_tempo()
 	%Reiniciar.pressed.connect(reiniciar)
 	entradas = get_parent().pontos_de_entrada()
 
@@ -23,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if terminou:
 		return
 	restante = maxf(0.0, restante - delta)
+	atualizar_tempo()
 	if restante <= 0.00001:
 		encerrar(true)
 		return
@@ -36,6 +42,13 @@ func _physics_process(delta: float) -> void:
 			if get_tree().get_node_count_in_group("inimigos") < 32:
 				criar_lesma()
 		intervalo_ate_onda = lerpf(4.0, 1.65, progresso)
+
+func atualizar_vida(atual: int, maxima: int) -> void:
+	vida_texto.text = "Vida: %d/%d" % [atual, maxima]
+
+func atualizar_tempo() -> void:
+	var segundos := ceili(restante)
+	tempo_texto.text = "Tempo: %d:%02d" % [segundos / 60, segundos % 60]
 
 func criar_lesma() -> void:
 	if entradas.is_empty() or not lesma:
@@ -67,6 +80,9 @@ func criar_lesma() -> void:
 func encerrar(vitoria: bool) -> void:
 	if terminou:
 		return
+	if vitoria:
+		restante = 0.0
+		atualizar_tempo()
 	terminou = true
 	%Resultado.text = "Horta a salvo!" if vitoria else "As lesmas venceram"
 	var segundos := floori(DURACAO - restante)
